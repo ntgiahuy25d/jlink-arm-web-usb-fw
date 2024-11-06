@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html style="font-family: Verdana; font-size: 12px"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Origin Trial Token, feature = WebUSB (For Chrome M57+), origin = https://webusb.github.io, expires = 2017-06-19 -->
+    <meta http-equiv="origin-trial" data-feature="WebUSB (For Chrome M57+)" data-expires="2017-06-19" content="Ag83MurQOa5N4SKRCqqtSlbycfe08s5LgUiqEI7J3jTk2NEIpRp7SLPz2i+EBDuXyf+AeRMdD6BI++kTSJmGzQEAAABReyJvcmlnaW4iOiJodHRwczovL3dlYnVzYi5naXRodWIuaW86NDQzIiwiZmVhdHVyZSI6IldlYlVTQjIiLCJleHBpcnkiOjE0OTc4OTM2OTV9">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>J-Link WebUSB Test</title>
+    <style>
+    .section-header {
+      background-color: #EEEEEE;
+      font-size: 14px;
+      font-weight: bold;
+      color: black;
+      width: 100%;
+      margin-bottom: 5px;
+      margin-top: 10px;
+    }
+    .box-output {
+      height:200px;
+      width:100%;
+      border-style: solid;
+      border-width: thin;
+      overflow:auto;
+      overflow-anchor: auto;
+      font-family: Verdana, Helvetica, sans-serif;
+      font-size: 11px;
+      border: 2px inset #000000;
+    }
+    </style>
+   </head>
+  <body>
+    <!--                                         -->
+    <!-- HTML part to define elements            -->
+    <!-- Elements are updated by programming.js          -->
+    <!-- USB logic is performed in seggerbulk.js -->
+    <!-- SEGGER head as sgv-->
+    <img alt="segger-header" src="./src/segger-header.svg">
+    <h1>WebUSB Test</h1>
+    <div><button id="BUTTON" onclick="PROGRAMMING_cbOnClick_Connect()">Connect</button></div>
+    <br>
+    <div class="section-header">J-Link Info</div>
+    <div><span>FW string:</span><span id="FWSTR"></span></div>
+    <div><span>Status:</span><span id="STATUS">Disconnected</span></div>
+    <br>
+    <div class="section-header">Target Info</div>
+    <div><span>IDCODE:</span><span id="IDCODE"></span></div>
+    <div><span>VCC:</span><span id="VCC"></span></div>
+    <script src="./src/seggerbulk.js"></script>  <!-- Scripts at the end of the page to reduce page-loading time. This also makes it possible to reference HTML elements without having to wait for them to load -->
+    <script src="./src/flashos.js"></script>
+    <script src="./src/ra6m3-flash-devices.js"></script>
+    <script src="./src/ra6m3-flash-program.js"></script>
+    <br>
+    <div class="section-header">Test Sequence</div>
+    <div class="box-output" id="OUT_DIV"><pre id="OUT"></pre></div>
+    <br>
+    <div class="section-header">Log</div>
+    <div class="box-output" id="LOG_DIV"><pre id="LOG">Enable log with _DEBUG = 1 or _DEBUG = 3</pre></div>
+    <script src="./src/programming.js"></script>
+
+</body></html>
